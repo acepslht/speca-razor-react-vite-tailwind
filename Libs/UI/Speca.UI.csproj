@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Content Update="Areas\**\*.*" CopyToPublishDirectory="Never" />
+	<Content Update="Pages\**\*.*" CopyToPublishDirectory="Never" />
+	<Content Update="package.json" CopyToOutputDirectory="Never" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Speca.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Styles\Metronic\" />
+    <Folder Include="Assets\Styles\Default\" />
+    <Folder Include="Assets\Styles\Vuexy\" />
+  </ItemGroup>
+
+</Project>

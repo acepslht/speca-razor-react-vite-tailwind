@@ -1,0 +1,21 @@
+{
+  "name": "speca-template",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^25.6.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "glob": "^13.0.6",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.8"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}

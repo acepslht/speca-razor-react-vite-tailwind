@@ -1,0 +1,25 @@
+﻿@import "tailwindcss";
+
+@theme {
+    /* Brand Identity Speca */
+    --color-speca-primary: #1a2a6c;
+    /* Metronic Design Tokens */
+    --color-metronic-primary: #0095E8;
+    --color-metronic-light: #F9F9F9;
+    /* Vuexy Design Tokens */
+    --color-vuexy-primary: #7367F0;
+    --color-vuexy-success: #28C76F;
+}
+
+/* Scoping: Mengganti variabel global berdasarkan class di <body> */
+@layer base {
+    .theme-metronic {
+        --color-primary: var(--color-metronic-primary);
+        --color-surface: var(--color-metronic-light);
+    }
+
+    .theme-vuexy {
+        --color-primary: var(--color-vuexy-primary);
+        --color-surface: #FFFFFF;
+    }
+}

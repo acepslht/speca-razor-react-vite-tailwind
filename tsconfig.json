@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler", // Ini kunci untuk Vite 6 + .NET 10
+    "strict": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true, // Diperlukan untuk vite.config.ts jika mengimpor file .ts lain
+    "noEmit": true, // Vite yang akan menangani kompilasi, bukan tsc
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [ "src/*" ]
+    }
+  },
+  "include": [ "vite.config.ts", "src/**/*.ts", "src/**/*.tsx" ],
+  "node_modules": [ "node_modules" ]
+}

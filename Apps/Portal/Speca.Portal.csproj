@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<Content Update="Areas\**\*.*" CopyToPublishDirectory="Never" />
+	<Content Update="Pages\**\*.*" CopyToPublishDirectory="Never" />
+	<Content Update="package.json" CopyToOutputDirectory="Never" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\UI\Speca.UI.csproj" />
+  </ItemGroup>
+
+  <Target Name="CheckAndInstallPnpm" BeforeTargets="Build" Condition="'$(Configuration)' == 'Debug'">
+	<Message Importance="high" Text="[Speca] Memeriksa pnpm dan dependensi..." />
+	<Exec Command="pnpm --version" ContinueOnError="true" IgnoreExitCode="true" WorkingDirectory="$(SolutionDir)">
+		<Output TaskParameter="ExitCode" PropertyName="PnpmExitCode" />
+	</Exec>
+	<Error Condition="'$(PnpmExitCode)' != '0'" Text="pnpm tidak ditemukan. Silakan install pnpm (npm install -g pnpm) untuk melanjutkan." />
+	<Exec Condition="!Exists('$(SolutionDir)node_modules')" Command="pnpm i" WorkingDirectory="$(SolutionDir)" />
+  </Target>
+
+  <Target Name="ViteBuildProduction" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+	<Message Importance="high" Text="[Speca] Menjalankan pnpm build untuk mode produksi..." />
+	<Exec Command="pnpm build" WorkingDirectory="$(SolutionDir)" />
+  </Target>
+
+  <Target Name="ViteClean" BeforeTargets="Clean">
+	<Message Importance="high" Text="[Speca] Menghapus folder dist (aset produksi)..." />
+	<RemoveDir Directories="$(ProjectDir)wwwroot/dist" />
+  </Target>
+	
+</Project>

@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Apps/">
+    <Project Path="Apps/Portal/Speca.Portal.csproj" />
+  </Folder>
+  <Folder Name="/Libs/">
+    <Project Path="Libs/Core/Speca.Core.csproj" />
+    <Project Path="Libs/UI/Speca.UI.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="package.json" />
+    <File Path="pnpm-workspace.yaml" />
+    <File Path="read.me" />
+    <File Path="tsconfig.json" />
+    <File Path="vite.config.ts" />
+  </Folder>
+</Solution>
