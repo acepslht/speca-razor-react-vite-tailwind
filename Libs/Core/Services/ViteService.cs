@@ -46,23 +46,18 @@ public class ViteService
     {
         if (IsDevelopment) return $"/{entryKey}";
 
-        if (_manifest.TryGetValue(entryKey, out var element))
-        {
-            return $"/{element.GetProperty("file").GetString()}";
-        }
-
         var entry = _manifest.FirstOrDefault(x =>
             x.Key.Equals(entryKey, StringComparison.OrdinalIgnoreCase) ||
             x.Key.EndsWith(entryKey, StringComparison.OrdinalIgnoreCase));
 
         if (entry.Value.ValueKind != JsonValueKind.Undefined)
         {
-            var resolvedFile = entry.Value.GetProperty("file").GetString();
-            return $"/{resolvedFile}";
+            var fileName = entry.Value.GetProperty("file").GetString();
+            return $"/dist/{fileName}";
         }
 
-        _logger.LogError("[Speca.Vite] Asset not found in manifest: {EntryKey}. Fallback applied.", entryKey);
-
-        return $"/{entryKey.TrimStart('/')}";
+        // Logging untuk mempermudah debug saat produksi
+        _logger.LogWarning("[Speca.Vite] Asset not found in manifest: {EntryKey}", entryKey);
+        return $"/dist/{entryKey.TrimStart('/')}";
     }
 }
