@@ -24,8 +24,6 @@ const entryPoint = {
     'libs/ui/app': path.resolve(__dirname, 'Libs', 'UI', 'Assets', 'app.css'),
 }
 
-console.info(entryPoint);
-
 const webAppPath = path.join(__dirname, 'Apps', 'Portal');
 let appsettings;
 try {
@@ -60,6 +58,8 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
     }
 }
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default defineConfig({
     plugins: [react(), tailwindcss()],
     content: {
@@ -70,7 +70,7 @@ export default defineConfig({
             "./Libs/**/*.tsx",
         ]
     },
-    base: '/dist/',
+    base: isProduction ? '/dist/' : '/',
     server: {
         strictPort: true,
         host: "localhost",
