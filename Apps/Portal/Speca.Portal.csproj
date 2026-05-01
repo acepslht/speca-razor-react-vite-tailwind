@@ -11,7 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\global.d.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="package.json" CopyToOutputDirectory="Never" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +29,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Libs\UI\Speca.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\global.d.ts" />
   </ItemGroup>
 
   <Target Name="CheckAndInstallPnpm" BeforeTargets="Build" Condition="'$(Configuration)' == 'Debug'">

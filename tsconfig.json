@@ -12,9 +12,17 @@
     "noEmit": true, // Vite yang akan menangani kompilasi, bukan tsc
     "baseUrl": ".",
     "paths": {
-      "@/*": [ "src/*" ]
+      "@/*": [ "Apps/Portal/Assets/*" ],
+      "@ui/*": [ "Libs/UI/Assets/*" ]
     }
   },
-  "include": [ "vite.config.ts", "src/**/*.ts", "src/**/*.tsx" ],
+  "include": [
+    "vite.config.ts",
+    "Libs/UI/Assets/**/*.ts",
+    "Libs/UI/Assets/**/*.tsx",
+    "Apps/Portal/Assets/**/*.ts",
+    "Apps/Portal/Assets/**/*.tsx",
+    "Apps/Portal/Assets/global.d.ts"
+  ],
   "node_modules": [ "node_modules" ]
 }

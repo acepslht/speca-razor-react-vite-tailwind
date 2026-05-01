@@ -3,17 +3,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Speca Platform</title>
-    <vite-asset srcdev="Libs/UI/Assets/app.css" srcpro="css/libs/ui/app-dist.css" asp-append-version="true"/>
+
+    <vite-asset 
+        srcdev="Libs/UI/Assets/app.css" 
+        srcpro="css/libs/ui/app-dist.css" 
+        asp-append-version="true"
+    />
+
 </head>
 
 <body>
-    <div class="min-h-screen bg-[var(--color-surface)]">
+
+    <div>
         @RenderBody()
     </div>
 
     @RenderSection("Scripts", false)
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
 </body>
 </html>

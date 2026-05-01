@@ -82,13 +82,20 @@ export default defineConfig({
             cert: fs.readFileSync(certFilePath),
         }
     },
+    define: {
+        'process.env': {}
+    },
     build: {
         outDir: path.join(webAppPath, "wwwroot", "dist"),
         emptyOutDir: true,
         manifest: false,
         rolldownOptions: {
             input: entryPoint,
+            external: ['jquery'],
             output: {
+                globals: {
+                    jquery: '$',
+                },
                 cleanDir: true,
                 // format: 'umd',
                 entryFileNames: 'js/[name]-dist.js',
