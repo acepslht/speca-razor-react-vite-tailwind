@@ -7,13 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="package.json" CopyToOutputDirectory="Never" />
+  </ItemGroup>
+
+  <ItemGroup>
 	<Content Update="Areas\**\*.*" CopyToPublishDirectory="Never" />
 	<Content Update="Pages\**\*.*" CopyToPublishDirectory="Never" />
-	<Content Update="package.json" CopyToOutputDirectory="Never" />
-	<Content Include="wwwroot\dist\**">
-		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-		<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	</Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -32,12 +35,6 @@
   <Target Name="ViteBuildProduction" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
 	<Message Importance="high" Text="[Speca] Menjalankan pnpm build untuk mode produksi..." />
 	<Exec Command="pnpm build" WorkingDirectory="$(SolutionDir)" />
-	<ItemGroup>
-		<ContentWithTargetPath Include="wwwroot\dist\**">
-			<TargetPath>wwwroot\dist\%(RecursiveDir)%(FileName)%(Extension)</TargetPath>
-			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-		</ContentWithTargetPath>
-	</ItemGroup>
   </Target>
 
   <Target Name="ViteClean" BeforeTargets="Clean">

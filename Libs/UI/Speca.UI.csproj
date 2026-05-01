@@ -8,13 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup>
 	<Content Update="Areas\**\*.*" CopyToPublishDirectory="Never" />
 	<Content Update="Pages\**\*.*" CopyToPublishDirectory="Never" />
-	<Content Update="package.json" CopyToOutputDirectory="Never" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +28,10 @@
     <Folder Include="Assets\Styles\Metronic\" />
     <Folder Include="Assets\Styles\Default\" />
     <Folder Include="Assets\Styles\Vuexy\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="package.json" CopyToOutputDirectory="Never" />
   </ItemGroup>
 
 </Project>

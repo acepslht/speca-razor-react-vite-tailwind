@@ -1,6 +1,5 @@
 
 using Speca.Core.Extentions;
-using Speca.Core.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,13 +8,6 @@ var ApplicationConfig = config.GetSection("Application");
 
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
-
-//if (builder.Environment.IsDevelopment())
-//{
-//    builder.Services.AddSpecaReverseProxy(ApplicationConfig);
-//}
-
-builder.Services.AddScoped<ViteService>();
 
 var app = builder.Build();
 
@@ -37,10 +29,6 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapRazorPages().WithStaticAssets();
     endpoints.MapDefaultControllerRoute();
-    //if (builder.Environment.IsDevelopment())
-    //{
-    //    endpoints.MapSpecaReverseProxy(true);
-    //}
 });
 #pragma warning restore ASP0014
 

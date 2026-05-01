@@ -58,8 +58,6 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
     }
 }
 
-const isProduction = process.env.NODE_ENV === 'production';
-
 export default defineConfig({
     plugins: [react(), tailwindcss()],
     content: {
@@ -70,7 +68,7 @@ export default defineConfig({
             "./Libs/**/*.tsx",
         ]
     },
-    base: isProduction ? '/dist/' : '/',
+    base: '/dist/',
     server: {
         strictPort: true,
         host: "localhost",
@@ -87,20 +85,19 @@ export default defineConfig({
     build: {
         outDir: path.join(webAppPath, "wwwroot", "dist"),
         emptyOutDir: true,
-        manifest: true,
+        manifest: false,
         rolldownOptions: {
             input: entryPoint,
             output: {
                 cleanDir: true,
                 // format: 'umd',
-                entryFileNames: '[name]-dist.js',
-                //assetFileNames: 'assets/[name]-[hash][extname]',
-                chunkFileNames: '[name]-[hash].js',
+                entryFileNames: 'js/[name]-dist.js',
+                chunkFileNames: 'js/[name]-[hash].js',
                 assetFileNames: ({ name }: { name: string }) => {
-                    if (!name) return '[name]-[hash][extname]';
-                    else if (/\.(gif|jpe?g|png|svg)$/.test(name)) return 'img/[name]-[hash][extname]';
-                    else if (/\.css$/.test(name)) return 'css/[name]-[hash][extname]';
-                    return '[name]-[hash][extname]';
+                    if (!name) return 'assets/[name]-dist[extname]';
+                    else if (/\.(gif|jpe?g|png|svg)$/.test(name)) return 'img/[name]-dist[extname]';
+                    else if (/\.css$/.test(name)) return 'css/[name]-dist[extname]';
+                    return 'assets/[name]-dist[extname]';
                 },
                 codeSplitting: {
                     minSize: 20000,
