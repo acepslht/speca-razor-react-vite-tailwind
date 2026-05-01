@@ -2,7 +2,7 @@
 @import 'tailwindcss';
 
 /* Tailwind scan sources */
-@source '../../dist/assets/vendors/ktui/';
+@source '@keenthemes/ktui/dist/ktui.min.js';
 @source '@keenthemes/ktui/src/components/alert/';
 @source '@keenthemes/ktui/src/components/toast/';
 
@@ -10,10 +10,10 @@
 @import "./config.ktui";
 
 /* KTUI styles */
-@import '../../node_modules/@keenthemes/ktui/styles.css';
+@import '@keenthemes/ktui/styles.css';
 
 /* Metronic components  */
-@import "./components/index";
+@import "./components";
 
 /* Demos */
-@import "./demos/demo1.css";
+@import "./layouts/layout1.css";

@@ -4,7 +4,14 @@
   "type": "module",
   "files": [ "Assets" ],
   "exports": {
-    "./styles/*": "./Assets/Styles/*.css",
-    "./components/*": "./Assets/Components/*.tsx"
+    "./css/*": "./Assets/Styles/*.css",
+    "./components/*": "./Assets/Components/*.tsx",
+    "./entries/*": "./Assets/Entries/*.ts",
+    "./*": "./Assets/*"
+  },
+  "dependencies": {
+    "@keenthemes/ktui": "^1.2.4",
+    "@simonwep/pickr": "^1.9.1",
+    "vanilla-calendar-pro": "^3.1.0"
   }
 }

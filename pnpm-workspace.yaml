@@ -1,5 +1,5 @@
-﻿packages:
-  - 'Libs/UI/Assets'
-  - 'Apps/Portal/Assets'
-  - 'Libs/*/Assets'   # Untuk library tambahan nantinya
-  - 'Apps/*/Assets'   # Untuk aplikasi tambahan nantinya
+packages:
+  - 'Libs/*' # Untuk library tambahan nantinya
+  - 'Apps/*' # Untuk aplikasi tambahan nantinya
+allowBuilds:
+  core-js: false

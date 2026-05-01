@@ -85,6 +85,14 @@ export default defineConfig({
     define: {
         'process.env': {}
     },
+    resolve: {
+        alias: {
+            '@portal': path.resolve(__dirname, './Apps/Portal/Assets'),
+            '@ui': path.resolve(__dirname, './Libs/UI/Assets'),
+            '@portal/styles': path.resolve(__dirname, './Apps/Portal/Assets/Styles'),
+            '@ui/styles': path.resolve(__dirname, './Libs/UI/Assets/Styles'),
+        }
+    },
     build: {
         outDir: path.join(webAppPath, "wwwroot", "dist"),
         emptyOutDir: true,

@@ -1,5 +1,5 @@
 {
-  "name": "speca-template",
+  "name": "@speca/platform",
   "private": true,
   "scripts": {
     "dev": "vite",

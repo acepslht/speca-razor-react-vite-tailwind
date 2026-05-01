@@ -25,9 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Styles\Metronic\" />
     <Folder Include="Assets\Styles\Default\" />
     <Folder Include="Assets\Styles\Vuexy\" />
+    <Folder Include="Assets\Vendors\ktui\" />
   </ItemGroup>
 
   <ItemGroup>
