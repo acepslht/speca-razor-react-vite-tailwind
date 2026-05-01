@@ -35,6 +35,11 @@
     <TypeScriptCompile Include="Assets\global.d.ts" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Assets\Components\" />
+    <Folder Include="Assets\Styles\" />
+  </ItemGroup>
+
   <Target Name="CheckAndInstallPnpm" BeforeTargets="Build" Condition="'$(Configuration)' == 'Debug'">
 	<Message Importance="high" Text="[Speca] Memeriksa pnpm dan dependensi..." />
 	<Exec Command="pnpm --version" ContinueOnError="true" IgnoreExitCode="true" WorkingDirectory="$(SolutionDir)">

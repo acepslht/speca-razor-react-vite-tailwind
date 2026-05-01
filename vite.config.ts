@@ -87,9 +87,9 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            '@portal': path.resolve(__dirname, './Apps/Portal/Assets'),
+            '@': path.resolve(__dirname, './Apps/Portal/Assets'),
             '@ui': path.resolve(__dirname, './Libs/UI/Assets'),
-            '@portal/styles': path.resolve(__dirname, './Apps/Portal/Assets/Styles'),
+            '@/styles': path.resolve(__dirname, './Apps/Portal/Assets/Styles'),
             '@ui/styles': path.resolve(__dirname, './Libs/UI/Assets/Styles'),
         }
     },

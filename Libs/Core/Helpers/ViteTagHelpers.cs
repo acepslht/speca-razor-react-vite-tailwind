@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Hosting;
-using Speca.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
