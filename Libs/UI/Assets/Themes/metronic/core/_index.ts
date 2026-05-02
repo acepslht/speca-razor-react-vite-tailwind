@@ -58,8 +58,6 @@ window.KTComponents = KTComponents;
 
 export default KTComponents;
 
-console.info('Metronic - UI Components Bundle Loaded: https://keenthemes.com/metronic');
-
 KTDom.ready(() => {
 	KTComponents.init();
 });

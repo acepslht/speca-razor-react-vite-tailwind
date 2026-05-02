@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+	<Content Update="Assets\**\*.*" CopyToPublishDirectory="Never" />
 	<Content Update="Areas\**\*.*" CopyToPublishDirectory="Never" />
 	<Content Update="Pages\**\*.*" CopyToPublishDirectory="Never" />
   </ItemGroup>

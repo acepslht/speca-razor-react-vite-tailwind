@@ -64,14 +64,26 @@ const getEntries = getEntryPoints(
 
 const getVendors = getEntryPoints(
     '{Apps,Libs}/**/Assets/Vendors/**/_*.{jsx,tsx,vue,js,ts,css,scss}',
-    /(Apps|Libs)\/([^/]+)\/Assets\/Vendors\/([^/]+)\/(?:.*\/)?_([^/.]+)\.(?:jsx|tsx|vue|js|ts|css|scss)$/i,
+    /(Apps|Libs)\/([^/]+)\/Assets\/Vendors\/.*?([^/]+)\/(?:app\/)?(?:([^/]+)\/)?_([^/.]+)\.(?:jsx|tsx|vue|js|ts|css|scss)$/i,
     (m) => {
         if (!m) return null;
         //const category = m[1].toLowerCase(); // Apps atau Libs
         //const project = m[2].toLowerCase().replace(/\./g, '-'); // Contoh: portal atau ui
-        const vendor = m[3].toLowerCase(); // Nama folder vendor
-        const fileName = m[4].toLowerCase(); // Nama file tanpa ekstensi dan underscore
-        return `vendors/${vendor}/${fileName}`;
+        const vendorFolder = m[3].toLowerCase(); // Nama folder vendor
+        const folderCategory = m[4] ? m[4].toLowerCase() : ''; // Menangkap apa pun: widgets, pages, layouts, components, dll
+        const fileName = m[5].toLowerCase();    // Nama file asli
+        const categoryPath = folderCategory ? `${folderCategory}/` : '';
+
+        const isMainFile = fileName === vendorFolder ||
+            fileName === 'index' ||
+            fileName === 'style' ||
+            fileName === 'theme'
+
+        if (isMainFile) {
+            return `vendors/${vendorFolder}/${folderCategory}`.replace(/\/$/, '');
+        }
+
+        return `vendors/${vendorFolder}/${categoryPath}${fileName}`;
     }
 );
 
