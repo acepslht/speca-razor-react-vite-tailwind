@@ -10,7 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
     <vite-asset srcdev="Libs/UI/Assets/Styles/styles.css"
-                srcpro="css/libs/ui/style-dist.css"
+                srcpro="css/style-dist.css"
+                asp-append-version="true" />
+
+    <vite-asset srcdev="Libs/UI/Assets/Vendors/keenicons/_styles.scss"
+                srcpro="css/vendor/keeincons/styles-dist.css"
                 asp-append-version="true" />
 
     @RenderSection("Styles", false)
@@ -6462,9 +6466,15 @@
   </div>
   <!-- End of Page -->
 
-    <vite-entry srcdev="Libs/UI/Assets/Entries/metronic.ts"
-                srcpro="js/libs/ui/metronic-dist.js"
-                asp-append-version="true" />
+    <vite-asset srcdev="Libs/UI/Assets/Themes/metronic/core/_index.ts"
+            srcpro="js/themes/metronic/core-dist.js"
+            asp-append-version="true" />
+    <vite-asset srcdev="Libs/UI/Assets/Themes/metronic/app/widgets/_general.js"
+            srcpro="js/themes/metronic/widgets/general-dist.js"
+            asp-append-version="true" />
+    <vite-asset srcdev="Libs/UI/Assets/Themes/metronic/app/layouts/_layout.js"
+            srcpro="js/themes/metronic/layouts/layout-dist.js"
+            asp-append-version="true" />
 
     @RenderSection("Scripts", false)
 

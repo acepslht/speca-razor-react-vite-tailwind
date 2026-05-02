@@ -4,7 +4,7 @@
   "libraries": [
     {
       "library": "jquery@3.7.1",
-      "destination": "wwwroot/lib/jquery/dist/"
+      "destination": "wwwroot/libs/jquery/dist/"
     }
   ]
 }

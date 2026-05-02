@@ -1,1 +1,0 @@
-﻿import '@ui/Themes/metronic/core';
