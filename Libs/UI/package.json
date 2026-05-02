@@ -2,7 +2,9 @@
   "name": "@speca/ui",
   "private": true,
   "type": "module",
-  "files": [ "Assets" ],
+  "files": [
+    "Assets"
+  ],
   "exports": {
     "./css/*": "./Assets/Styles/*.css",
     "./components/*": "./Assets/Components/*.tsx",
@@ -12,6 +14,7 @@
   "dependencies": {
     "@keenthemes/ktui": "^1.2.4",
     "@simonwep/pickr": "^1.9.1",
+    "sortablejs": "^1.15.7",
     "vanilla-calendar-pro": "^3.1.0"
   }
 }

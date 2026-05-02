@@ -21,7 +21,7 @@ const getAssetsEntries = () => {
 
 const entryPoint = {
     ...getAssetsEntries(),
-    'libs/ui/app': path.resolve(__dirname, 'Libs', 'UI', 'Assets', 'app.css'),
+    'libs/ui/style': path.resolve(__dirname, 'Libs', 'UI', 'Assets', 'Styles', 'styles.css'),
 }
 
 const webAppPath = path.join(__dirname, 'Apps', 'Portal');
@@ -88,9 +88,7 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './Apps/Portal/Assets'),
-            '@ui': path.resolve(__dirname, './Libs/UI/Assets'),
-            '@/styles': path.resolve(__dirname, './Apps/Portal/Assets/Styles'),
-            '@ui/styles': path.resolve(__dirname, './Libs/UI/Assets/Styles'),
+            '@ui': path.resolve(__dirname, './Libs/UI/Assets')
         }
     },
     build: {

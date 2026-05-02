@@ -21,8 +21,7 @@
     "Libs/UI/Assets/**/*.ts",
     "Libs/UI/Assets/**/*.tsx",
     "Apps/Portal/Assets/**/*.ts",
-    "Apps/Portal/Assets/**/*.tsx",
-    "Apps/Portal/Assets/global.d.ts"
+    "Apps/Portal/Assets/**/*.tsx"
   ],
   "node_modules": [ "node_modules" ]
 }
